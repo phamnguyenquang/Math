@@ -14,12 +14,13 @@
 #include <Source/MathUtils.cpp>
 
 int main(void) {
-	std::string exp = "exp(x)";
+	std::string exp = "x^2";
+	std::string Zgaussian = "(exp((x^2)/2))/(sqrt(2*3.1416))";
 //	FunctionParser fp;
 //	fp.Parse(exp, "x");
 //	double var[1]={3.0};
 //	double testRes=fp.Eval(var);
-	double testRes = MathUtils::DerivativeSingleVarFunct(exp, "x", 3.0);
-//	double testRes = MathUtils::IntegralSingleVarFunct(exp, "x",3, 3);
+//	double testRes = MathUtils::DerivativeSingleVarFunct(exp, "x", 3.0);
+	double testRes = MathUtils::IntegralSingleVarFunct(Zgaussian, "x",-100, 100);
 	std::cout<<testRes<<std::endl;
 }

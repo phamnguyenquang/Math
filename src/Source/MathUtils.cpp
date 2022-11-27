@@ -90,7 +90,7 @@ double MathUtils::IntegralSingleVarFunct(std::string expression,
 		while (abs(currentResult - prevResult)
 				>= std::numeric_limits<double>::epsilon()) {
 			result = 0.0;
-			step = (newEnd + begin) / (256 + 128 + 64 + 32 + 16 + 8);
+			step = abs((newEnd + begin+0.5) / (2));
 			for (double i = begin; i <= end; i += step) {
 				//left height
 				variables[0] = i;
